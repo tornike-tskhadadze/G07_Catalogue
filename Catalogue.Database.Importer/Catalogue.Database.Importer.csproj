@@ -14,4 +14,13 @@
     <ProjectReference Include="..\Catalogue.Shared\Catalogue.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="DatabaseHelper.Common">
+      <HintPath>..\..\..\source\repos\Group07\DatabaseHelper.Common\bin\Debug\net8.0\DatabaseHelper.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="DatabaseHelper.SqlServer">
+      <HintPath>..\..\..\source\repos\Group07\DatabaseHelper.SqlServer\bin\Debug\net8.0\DatabaseHelper.SqlServer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
