@@ -31,15 +31,16 @@ internal class DatabaseWriter : IDataWriter<Category>
             {
                 foreach (var product in category.Products)
                 {
-                    _database.ExecuteNonQuery(
+                    _database.ExecuteNonQuery
+                     (
                         "ImportProductDatas_SP",
-                        CommandType.StoredProcedure,
-                        new SqlParameter("@CategoryName", category.Name),
-                        new SqlParameter("@CategoryIsActive", category.IsActive),
-                        new SqlParameter("@ProductName", product.Name),
-                        new SqlParameter("@ProductCode", product.Code),
-                        new SqlParameter("@ProductPrice", product.Price),
-                        new SqlParameter("@ProductIsActive", product.IsActive)
+                         CommandType.StoredProcedure,
+                         _database.CreateParameter("@CategoryName", category.Name),
+                         _database.CreateParameter("@CategoryIsActive", category.IsActive),
+                         _database.CreateParameter("@ProductName", product.Name),
+                         _database.CreateParameter("@ProductCode", product.Code),
+                         _database.CreateParameter("@ProductPrice", product.Price),
+                         _database.CreateParameter("@ProductIsActive", product.IsActive)
                     );
                 }
             }
@@ -57,5 +58,4 @@ internal class DatabaseWriter : IDataWriter<Category>
         }
     }
 }
-
 
